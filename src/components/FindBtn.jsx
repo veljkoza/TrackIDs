@@ -1,7 +1,7 @@
 import React from 'react';
 
-function FindBtn(){
-    return <button id="find-btn">Find songs</button>
+function FindBtn(props){
+    return <button id="find-btn" onClick={props.listSongs}>Find songs</button>
 }
 
 export default FindBtn;
