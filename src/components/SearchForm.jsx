@@ -1,8 +1,9 @@
 import React from "react";
 import SearchVideo from "./SearchVideo";
 import FindBtn from "./FindBtn";
+import AllSongs from "./AllSongs";
 
-const FakeSongs = [
+const songs = [
   { time: 3.23, name: "Test name" },
   { time: 3.23, name: "Test name" },
   { time: 3.23, name: "Test name" },
@@ -15,13 +16,14 @@ class SearchForm extends React.Component {
     super();
     this.state = {
       showSongs: [],
+      songs: [],
     };
   }
 
   getSongs = () => {};
 
   listSongs = () => {
-    const showSongs = FakeSongs.map((song) => {
+    const showSongs = songs.map((song) => {
       return (
         <div className="song-info">
           <p>{song.time}</p>
@@ -32,19 +34,19 @@ class SearchForm extends React.Component {
     });
     console.log(showSongs);
     this.setState({ showSongs });
+    this.setState({ songs });
+    console.log(this.state.songs);
     return showSongs;
   };
 
   render() {
     return (
       <div className="search-form">
-        <SearchVideo />
-        <FindBtn listSongs={this.listSongs}/>
-
-        
-        {this.state.showSongs.map((song) => {
-          return song;
-        })}
+        <div className="search-first-part">
+          <SearchVideo />
+          <FindBtn listSongs={this.listSongs} />
+        </div>
+        <AllSongs songs={this.state.songs} />
       </div>
     );
   }
