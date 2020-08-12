@@ -61,12 +61,12 @@
 }
 
 .song-info-wrapper {
-  padding: 0.3rem;
+  padding: 0.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(to right, #f02d3a, #e24f59);
-  margin: 0.3rem;
+  margin: 0.4rem;
   border-radius: 5px;
 }
 
@@ -92,7 +92,7 @@
   content: "";
   width: 100%;
   top: 53%;
-  border-top: 1px solid black;
+  border-top: 1px solid #eff6ee;
 }
 
 @media screen and (max-width: 1600px) {
